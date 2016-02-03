@@ -3,7 +3,7 @@
 * [Homepage](https://rubygems.org/gems/ph_model)
 * [Documentation](http://rubydoc.info/gems/ph_model/frames)
 * [Email](mailto:piotr@payrollhero.com)
-# [Changelog](CHANGELOG.md)
+* [Changelog](CHANGELOG.md)
 
 ## Description
 
