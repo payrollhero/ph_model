@@ -1,0 +1,10 @@
+engines:
+  rubocop:
+    enabled: true
+ratings:
+  paths:
+  - "app/**"
+  - "lib/**"
+  - Gemfile.lock
+exclude_paths:
+  - "spec/*"
