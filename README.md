@@ -6,6 +6,8 @@
 
 ## Description
 
+[![Build Status](https://travis-ci.org/payrollhero/ph_model.svg?branch=master)](https://travis-ci.org/payrollhero/ph_model)
+
 TODO: Description
 
 ## Copyright
