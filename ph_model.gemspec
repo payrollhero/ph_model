@@ -3,19 +3,19 @@
 require File.expand_path('../lib/ph_model/version', __FILE__)
 
 Gem::Specification.new do |gem|
-  gem.name          = 'ph_model'
-  gem.version       = PhModel::VERSION
-  gem.authors       = ['Piotr Banasik']
-  gem.email         = 'piotr@payrollhero.com'
+  gem.name = 'ph_model'
+  gem.version = PhModel::VERSION
+  gem.authors = ['Piotr Banasik']
+  gem.email = 'piotr@payrollhero.com'
 
-  gem.summary       = 'ph-model -- active_model, active_attr brought together at last'
-  gem.description   = 'Because why do less if you can do more with non db models'
-  gem.homepage      = 'https://github.com/payrollhero/ph_model'
-  gem.license       = 'MIT'
+  gem.summary = 'ph-model -- active_model, active_attr brought together at last'
+  gem.description = 'Because why do less if you can do more with non db models'
+  gem.homepage = 'https://github.com/payrollhero/ph_model'
+  gem.license = 'MIT'
 
-  gem.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
-  gem.bindir        = 'exe'
-  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
+  gem.files = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+  gem.bindir = 'exe'
+  gem.executables = gem.files.grep(%r{^bin/}).map { |f| File.basename(f) }
   gem.require_paths = ['lib']
 
   gem.add_runtime_dependency 'activesupport', '> 3.2'
