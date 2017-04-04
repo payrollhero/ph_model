@@ -1,26 +1,74 @@
 require "spec_helper"
 
 describe PhModel do
-  subject(:model_class) {
-    temp_class = Class.new do
+  subject(:model_class) do
+    Class.new do
       include PhModel
-
       attribute :foo
     end
+  end
 
-    stub_const "FooModel", temp_class
+  let(:klass) do
+    subject.tap do |temp_class|
+      stub_const "FooModel", temp_class
+    end
+  end
 
-    temp_class
-  }
-
-  it { expect(model_class.private_methods).to include :new }
-  it { expect(model_class.build(foo: :bar).foo).to eq :bar }
+  it { expect(klass.private_methods).to include :new }
+  it { expect(klass.build(foo: :bar).foo).to eq :bar }
 
   describe "invalid attribute assignment" do
     example do
       expect {
-        model_class.build one: 'two', foo: :bar
+        klass.build one: 'two', foo: :bar
       }.to raise_exception(NoMethodError, /undefined method `one=' for #<FooModel foo: nil>/)
+    end
+  end
+
+  describe "AttributeRequiredValidation" do
+    subject(:model_class) do
+      Class.new do
+        include PhModel
+        attribute :foo, required: true
+      end
+    end
+
+    example do
+      expect {
+        klass.build
+      }.to raise_exception(PhModel::ValidationFailed, "FooModel is invalid: Foo can't be empty")
+    end
+  end
+
+  describe "AttributeTypeValidation" do
+    describe "simple type" do
+      subject(:model_class) do
+        Class.new do
+          include PhModel
+          attribute :foo, type: String
+        end
+      end
+
+      example do
+        expect {
+          klass.build foo: 1
+        }.to raise_exception(PhModel::ValidationFailed, "FooModel is invalid: Foo must be String, was Fixnum")
+      end
+    end
+
+    describe "array type" do
+      subject(:model_class) do
+        Class.new do
+          include PhModel
+          attribute :foo, type: [String]
+        end
+      end
+
+      example do
+        expect {
+          klass.build foo: "Hello"
+        }.to raise_exception(PhModel::ValidationFailed, "FooModel is invalid: Foo must be [String], was String")
+      end
     end
   end
 end

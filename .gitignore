@@ -6,3 +6,4 @@ public/
 public
 *.db
 tmp/
+.ruby-version

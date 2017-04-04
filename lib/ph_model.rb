@@ -17,10 +17,32 @@ module PhModel
   extend ActiveSupport::Concern
   extend ActiveSupport::Autoload
 
+  autoload :Concerns
+  autoload :ValidationFailed
+
   include ActiveAttr::BasicModel
   include ActiveAttr::AttributeDefaults
   include ActiveAttr::QueryAttributes
   include ActiveAttr::MassAssignment
+
+  include Concerns::InitializeCallback
+  include Concerns::AttributeRequiredValidation
+  include Concerns::AttributeTypeValidation
+  include Concerns::AttributeNestedValidation
+  include Concerns::AttributeOfArrayTypeInitialization
+
+  def as_json
+    {}.tap do |hash|
+      self.class.attributes.each do |attribute_name, _info|
+        hash[attribute_name] = send(attribute_name).as_json
+      end
+    end
+  end
+
+  def inspect
+    attr_info = self.class.attributes.map { |attr_name, info| "#{attr_name}: #{self.send(attr_name).inspect}" }.join(", ")
+    "#<#{self.model_name} #{attr_info}>"
+  end
 
   # Monkey patch #assign_attributes inside ActiveAttr::MassAssignment
   # so that it doesn't blindly ignore attempting to assign attributes which do not
@@ -37,9 +59,6 @@ module PhModel
       send writer, value
     end if sanitized_new_attributes
   end
-
-  autoload :Concerns
-  autoload :ValidationFailed
 
   include Concerns::ValidatedFactory
 end
