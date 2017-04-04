@@ -1,5 +1,8 @@
 # Change Log
 
+## [v1.0.0](https://github.com/payrollhero/ph_model/tree/v1.0.0) (2017-04-04)
+[Full Changelog](https://github.com/payrollhero/ph_model/compare/v0.0.1...v1.0.0)
+
 ## [v0.0.1](https://github.com/payrollhero/ph_model/tree/v0.0.1) (2016-02-03)
 - Initial extract from ph\_utility [\#1](https://github.com/payrollhero/ph_model/pull/1) ([piotrb](https://github.com/piotrb))
 
