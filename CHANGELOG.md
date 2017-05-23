@@ -1,5 +1,14 @@
 # Change Log
 
+## [v1.1.0](https://github.com/payrollhero/ph_model/tree/v1.1.0) (2017-05-23)
+[Full Changelog](https://github.com/payrollhero/ph_model/compare/v1.0.2...v1.1.0)
+
+## [v1.0.2](https://github.com/payrollhero/ph_model/tree/v1.0.2) (2017-04-06)
+[Full Changelog](https://github.com/payrollhero/ph_model/compare/v1.0.1...v1.0.2)
+
+## [v1.0.1](https://github.com/payrollhero/ph_model/tree/v1.0.1) (2017-04-04)
+[Full Changelog](https://github.com/payrollhero/ph_model/compare/v1.0.0...v1.0.1)
+
 ## [v1.0.0](https://github.com/payrollhero/ph_model/tree/v1.0.0) (2017-04-04)
 [Full Changelog](https://github.com/payrollhero/ph_model/compare/v0.0.1...v1.0.0)
 
