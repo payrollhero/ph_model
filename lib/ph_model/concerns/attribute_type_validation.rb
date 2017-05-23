@@ -1,5 +1,11 @@
 module PhModel
   module Concerns
+
+    # This will validate any attribute defined with `type: `
+    # the type value should be a class, or the special notation `[SomeClass]` which is meant to designate that this is
+    # a collection of those classes
+    #
+    # `no_type_check: true` can be optionally passed to disable this check (other features might use the `type` column)
     module AttributeTypeValidation
       extend ActiveSupport::Concern
 
@@ -9,7 +15,7 @@ module PhModel
 
       def ensure_typed_attributes_class
         self.class.attributes.each do |attribute_name, info|
-          if info[:type] && !type_match?(attribute_name)
+          if info[:type] && !info[:no_type_check] && !type_match?(attribute_name)
             errors.add(attribute_name, "must be #{info[:type].inspect}, was #{type_summary(attribute_name)}")
           end
         end
