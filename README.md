@@ -11,6 +11,7 @@
 [![Code Climate](https://codeclimate.com/github/payrollhero/ph_model/badges/gpa.svg)](https://codeclimate.com/github/payrollhero/ph_model)
 [![Issue Count](https://codeclimate.com/github/payrollhero/ph_model/badges/issue_count.svg)](https://codeclimate.com/github/payrollhero/ph_model)
 [![Dependency Status](https://gemnasium.com/payrollhero/ph_model.svg)](https://gemnasium.com/payrollhero/ph_model)
+[![Gem Version](https://badge.fury.io/rb/ph_model.svg)](https://badge.fury.io/rb/ph_model)
 
 This Gem basically marries ActiveModel and ActiveAttr is a nice package.
 
