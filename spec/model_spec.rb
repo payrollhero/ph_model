@@ -52,7 +52,7 @@ describe PhModel do
       example do
         expect {
           klass.build foo: 1
-        }.to raise_exception(PhModel::ValidationFailed, "FooModel is invalid: Foo must be String, was Fixnum")
+        }.to raise_exception(PhModel::ValidationFailed, /FooModel is invalid: Foo must be String, was (Fixnum|Integer)/)
       end
     end
 

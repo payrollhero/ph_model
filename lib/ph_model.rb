@@ -31,7 +31,7 @@ module PhModel
   include Concerns::AttributeNestedValidation
   include Concerns::AttributeOfArrayTypeInitialization
 
-  def as_json
+  def as_json(*)
     {}.tap do |hash|
       self.class.attributes.each do |attribute_name, _info|
         hash[attribute_name] = send(attribute_name).as_json

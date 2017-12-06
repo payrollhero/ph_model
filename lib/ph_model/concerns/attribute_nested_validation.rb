@@ -13,13 +13,17 @@ module PhModel
           if info[:type].is_a? Array
             if value.respond_to? :each_with_index
               value.each_with_index do |item_value, index|
-                check_one(item_value, "#{attribute_name}[#{index}]")
+                check_one(item_value, format_nested_attribute_name(attribute_name, index, item_value))
               end
             end
           else
             check_one(value, attribute_name)
           end
         end
+      end
+
+      def format_nested_attribute_name(attribute_name, index, item_value)
+        "#{attribute_name}[#{index}]"
       end
 
       def check_one(value, attribute_name)
