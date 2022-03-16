@@ -18,7 +18,7 @@ module ActiveModel
           allowed_classes = classes.to_sentence two_words_connector: " or ",
                                                 last_word_connector: ", or "
 
-          record.errors[attribute] << (options[:message] || "must be a #{allowed_classes}")
+          record.errors.add(attribute, (options[:message] || "must be a #{allowed_classes}"))
         end
       end
     end
