@@ -40,7 +40,7 @@ module PhModel
         when nil
           true
         when Array
-          if type.count > 0
+          if type.count > 1
             type.any? { |typ| value.is_a?(typ) }
           else
             if value.kind_of? Array
