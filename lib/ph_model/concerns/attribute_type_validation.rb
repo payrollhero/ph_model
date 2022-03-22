@@ -40,8 +40,8 @@ module PhModel
         when nil
           true
         when Array
-          if type.count != 1
-            raise ArgumentError, "don't know how to handle type: #{type.inspect}"
+          if type.count > 0
+            type.any? { |typ| value.is_a?(typ) }
           else
             if value.kind_of? Array
               value.all? { |item| item.is_a?(type.first) }

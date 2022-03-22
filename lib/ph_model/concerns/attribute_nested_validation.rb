@@ -27,7 +27,8 @@ module PhModel
       end
 
       def check_one(value, attribute_name)
-        return if !value.respond_to?(:valid?) || !value.respond_to?(:errors) || value.errors.nil? || value.valid?
+        return if !value.respond_to?(:valid?) || !value.respond_to?(:errors) || value.errors.nil? ||
+          (value.respond_to?(:frozen?) && value.frozen?) || value.valid?
         value.errors.full_messages.each do |message|
           errors.add(:base, "#{attribute_name}.#{message}")
         end
