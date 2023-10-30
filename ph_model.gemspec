@@ -8,7 +8,7 @@ Gem::Specification.new do |gem|
   gem.authors = ['Piotr Banasik']
   gem.email = 'piotr@payrollhero.com'
 
-  gem.summary = 'ph-model -- active_model, active_attr brought together at last'
+  gem.summary = 'ph-model -- active_model, ??? active_attr brought together at last'
   gem.description = 'Because why do less if you can do more with non db models'
   gem.homepage = 'https://github.com/payrollhero/ph_model'
   gem.license = 'MIT'
@@ -20,10 +20,9 @@ Gem::Specification.new do |gem|
 
   gem.add_runtime_dependency 'activesupport', '> 3.2'
   gem.add_runtime_dependency 'activemodel', '> 3.2'
-  gem.add_runtime_dependency 'active_attr', '~> 0.8'
 
   gem.add_development_dependency 'faraday'
-  gem.add_development_dependency 'bundler', '~> 1.0'
+  gem.add_development_dependency 'bundler', '~> 2.3'
   gem.add_development_dependency 'rake', '~> 10.0'
   gem.add_development_dependency 'rspec', '~> 3.0'
   gem.add_development_dependency 'rubygems-tasks', '~> 0.2'

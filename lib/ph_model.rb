@@ -1,6 +1,5 @@
 require 'active_support/all'
 require 'active_model'
-require 'active_attr'
 
 ActiveModel::Validations # ensure its loaded since we're patching it
 
