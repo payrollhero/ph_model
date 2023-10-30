@@ -40,8 +40,8 @@ module PhModel
   end
 
   def inspect
-    attr_info = self.class.attributes.map { |attr_name, info| "#{attr_name}: #{self.send(attr_name).inspect}" }.join(", ")
-    "#<#{self.model_name} #{attr_info}>"
+    attr_info = self.class.attributes.map { |attr_name, info| "#{attr_name}: #{self.send(attr_name).inspect}" }
+    "#<#{self.model_name} #{attr_info.join(', ')}>"
   end
 
   # Monkey patch #assign_attributes inside ActiveAttr::MassAssignment

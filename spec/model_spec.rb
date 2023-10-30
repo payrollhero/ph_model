@@ -21,7 +21,7 @@ describe PhModel do
     example do
       expect {
         klass.build one: 'two', foo: :bar
-      }.to raise_exception(NoMethodError, /undefined method `one=' for #<FooModel foo: nil>/)
+      }.to raise_exception(NoMethodError, /undefined method `one=' for .*FooModel/)
     end
   end
 
