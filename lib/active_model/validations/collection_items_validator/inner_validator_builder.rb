@@ -14,7 +14,7 @@ module ActiveModel
       end
 
       def build
-        validator_class.new inner_options.merge(attributes: [:base])
+        validator_class.new **inner_options.merge(attributes: [:base])
       end
 
       private
