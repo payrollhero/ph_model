@@ -42,7 +42,7 @@ jobs:
     env:
       BUNDLE_GEMFILE: ${{ github.workspace }}/gemfiles/${{ matrix.gemfile }}.gemfile
       CI: true
-      COVERALLS_REPO_TOKEN: izk0cvqAVqD2Vdews2UjsnOZHLgzocyQL
+      COVERALLS_REPO_TOKEN: 3PVU3qEEgaWdwemUGBjnbYwv87BPTti9u
     steps:
     - uses: actions/checkout@v2
     - uses: ruby/setup-ruby@v1
